@@ -1,0 +1,2 @@
+# UralsCoin
+URALS Coin source
