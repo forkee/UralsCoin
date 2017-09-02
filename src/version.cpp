@@ -39,7 +39,7 @@ const std::string CLIENT_NAME("URALS Core");
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
 #    define GIT_COMMIT_ID ""
-#    define GIT_COMMIT_DATE "Sat, 17 Oct 2015 16:33:17 -0700"
+#    define GIT_COMMIT_DATE "Sat, 2 Aug 2017 11:00:00 +5"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj,min,rev,build,suffix) \
