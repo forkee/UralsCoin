@@ -73,13 +73,13 @@ public:
 		vSeeds.push_back(CDNSSeedData("151.248.118.2", "151.248.118.2"));
 		
 
-
-        base58Prefixes[PUBKEY_ADDRESS] = list_of( 130);                    //uralsdev 09-2017   addresses start with 'u'
-        base58Prefixes[SCRIPT_ADDRESS] = list_of( 5);                    //script addresses start with '7'
-        base58Prefixes[SECRET_KEY] =     list_of(204);                    //Pubkey +128 uralsdev
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E); // 'xpub '
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4); // 'xpriv'
-        base58Prefixes[EXT_COIN_TYPE]  = list_of(0x80000005);             // Urals BIP44 coin type is '5'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,130);                    //uralsdev 09-2017   addresses start with 'u'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);                    //script addresses start with '7'
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);                    //Pubkey +128 uralsdev
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >(); // 'xpub '
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >(); // 'xpriv'
+        base58Prefixes[EXT_COIN_TYPE]  = std::vector<unsigned char>(1,0x80000005);             // Urals BIP44 coin type is '5'
+//        base58Prefixes[EXT_COIN_TYPE]  = list_of(0x80000005);             //Old format uralsdev 
 
         // Convert the pnSeeds array into usable address objects.
         for (unsigned int i = 0; i < ARRAYLEN(pnSeed); i++)
@@ -140,16 +140,17 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("", ""));       //uralsdev 04-2015 vSeeds.push_back(CDNSSeedData("urals.qa", "testnet-seed.urals.qa"));
-        *///legacy seeders
+        vSeeds.push_back(CDNSSeedData("", ""));       
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(141);                    // Testnet addresses start with 'y' or 'z'
-        base58Prefixes[SCRIPT_ADDRESS] = list_of( 196);                    // urals script addresses start with '8' or '9'
-        base58Prefixes[SECRET_KEY]     = list_of(211);                    /// Testnet  private keys start with '9' or 'c' (Bitcoin defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF); //  tpub
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94); //  tprv
-        base58Prefixes[EXT_COIN_TYPE]  = list_of(0x80000001);             // Testnet urals BIP44 coin type is '5' (All coin's testnet default)
-    }
+    
+       base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,141);                    // Testnet addresses start with 'y' or 'z'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);                    // urals script addresses start with '8' or '9'
+        base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1,211);                    /// Testnet  private keys start with '9' or 'c' (Bitcoin defaults)
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >(); //  tpub
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >(); //  tprv
+        base58Prefixes[EXT_COIN_TYPE]  = std::vector<unsigned char>(1,0x80000001);             // Testnet urals BIP44 coin type is '5' (All coin's testnet default)
+
+	}
     virtual Network NetworkID() const { return CChainParams::TESTNET; }
 };
 static CTestNetParams testNetParams;
