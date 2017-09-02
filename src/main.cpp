@@ -1357,9 +1357,6 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos)
         return error("%s : Deserialize or I/O error - %s", __func__, e.what());
     }
 
-    // Check the header
-	LogPrintf("main.cpp: CheckTheHeader: block.GetHash = %s, block.nBits = %d \n", block.GetHash().ToString().c_str(), block.nBits);
-
     if (!CheckProofOfWork(block.GetHash(), block.nBits))
         return error("ReadBlockFromDisk : Errors in block header");
 
@@ -1685,11 +1682,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 
     // Check proof of work matches claimed amount
 
-	LogPrintf("main.cpp: CheckPOW: hash = %s, bnTarget = %s", hash.ToString().c_str(),bnTarget.getuint256().ToString().c_str());
-	// Uralsdev 26-06-2016
-	//if (hash > bnTarget.getuint256() && hash > hashGenesisBlockOfficial)
-    //if (hash > bnTarget.getuint256())
-    //    return error("CheckProofOfWork() : hash doesn't match nBits");
+    if (hash > bnTarget.getuint256())
+        return error("CheckProofOfWork() : hash doesn't match nBits");
 
     return true;
 }

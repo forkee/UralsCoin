@@ -40,109 +40,45 @@ public:
   //    name, networkVersion, privateKeyPrefix, WIF_Start, CWIF_Start, donate
   // ("Urals",  0x66, 0xcc, "7",    "X"    , "  ")
   
-        vAlertPubKey = ParseHex("048240a8748a80a286b270ba126705ced4f2ce5a7847b3610ea3c06513150dade2a8512ed5ea86320824683fc0818f0ac019214973e677acd1244f6d0571fc5103"); //uralsdev 04-2015   ist bei allen gleich
-//        vAlertPubKey = ParseHex("04ffff001d01041f51756f64206c69636574206a6f76692c206e6f6e206c6963657420626f7669"); //uralsdev 04-2015   ist bei allen gleich
-////	vAlertPubKey = ParseHex("0x04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f"); //Urals generated
+        vAlertPubKey = ParseHex("048240a8748a80a286b270ba126705ced4f2ce5a7847b3610ea3c06513150dade2a8512ed5ea86320824683fc0818f0ac019214973e677acd1244f6d0571fc5103"); 
         nDefaultPort = 7444;
         nRPCPort = 7443;
-        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);  // Urals starting difficulty is 1 / 2^12    //uralsdev 04-2015   main.cpp 36
-        nSubsidyHalvingInterval = 210000; //uralsdev 04-2015   UNBEKANNT FUNKTION
+        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);  // Urals starting difficulty is 1 / 2^12    
+        nSubsidyHalvingInterval = 210000; 
 
-        // Genesis block            Sprungmarke AAAAB
-//        const char* pszTimestamp = "On September 1, 1581, the Cossack squad under the command of Ermak made a campaign for the Stone Belt (the Urals)";
+        // Genesis block            
         const char* pszTimestamp = "28/06/2017: Russia’s Parliament is Discussing the Legalization of Bitcoin.";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 100 * COIN; //uralsdev 04-2015
-        //txNew.vout[0].nValue = 50 * COIN; //uralsdev 04-2015
+        txNew.vout[0].nValue = 100 * COIN; 
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;   //urals
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        //genesis.nTime    = 1501545600;   //uralsdev 07-2017
-        //genesis.nTime    = 1504224000;   //uralsdev 07-2017
-        genesis.nTime    = 1503878400;   //uralsdev 07-2017
-        //genesis.nBits    = 0x1e0ffff0;  //number of coins
-        genesis.nBits    = 0x1e0fffff;  //number of coins
-        genesis.nNonce   = 2373747;  //uralsdev 06-2017
+        genesis.nTime    = 1504224000;  
+        genesis.nBits    = 0x1e0ffff0;  
+        genesis.nNonce   = 25912842;
 
         hashGenesisBlock = genesis.GetHash();
 	
-LogPrintf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, hashGenesisBlock.ToString().c_str());
-LogPrintf("Mainnet: nonce %08u: Merkle = %s \n", genesis.nNonce, genesis.hashMerkleRoot.ToString().c_str());
-LogPrintf("Mainnet: nonce %08u: min nBit =  %08x\n",genesis.nNonce, bnProofOfWorkLimit.GetCompact());
-//LogPrintf("Mainnet: nonce %08u: "hash 2 = %s\n", genesis.nNonce, hash.ToString().c_str());
 
-        assert(hashGenesisBlock == uint256("0xe453fa9b1dac51b440076dc8bdbf2b82d6c006232fcff620bcd82bfbc24a2b69"));
-        assert(genesis.hashMerkleRoot == uint256("0x5bab319403ecce5eccd4715162fd72d35313064211ff16fccde441a12b2b93b8")); 
-/*
-Mainnet: nonce 02373747: hash = 356175917440e0acbcd7802b294c2c0b9545697a1a36bb14f5cc780f57aad58b 
-Mainnet: nonce 02373747: Merkle = 03bb497b4a6a17984b048a0b3351019e8a68a345b8e2b817310b7f9afffd92c
-*/
+        assert(hashGenesisBlock == uint256("0x00000bf56638a0f85009007e92cd848160d5211da779fd4e23f4bd22f0f5221a"));
+        assert(genesis.hashMerkleRoot == uint256("0x5bab319403ecce5eccd4715162fd72d35313064211ff16fccde441a12b2b93b8"));
 
-/*	//// debug print
-        printf("genesis.GetHash() = %s\n", genesis.GetHash().ToString().c_str());
-        printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-
-        // If genesis block hash does not match, then generate new genesis hash.
-        //if (true && block.GetHash() != (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet))
-        if (true && genesis.GetHash() != hashGenesisBlock )
-        {
-            printf("Searching for genesis block...\n");
-            // This will figure out a valid hash and Nonce if you're
-            // creating a different genesis block:
-            uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-            uint256 thash;
-            char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
-
-            while(true)
-            {
-                scrypt_1024_1_1_256_sp(BEGIN(genesis.nVersion), BEGIN(thash), scratchpad);
-                if (thash <= hashTarget)
-                    break;
-                if ((genesis.nNonce & 0xFFF) == 0)
-                {
-                    printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-                }
-               ++genesis.nNonce;
-                if (genesis.nNonce == 0)
-                {
-                    printf("NONCE WRAPPED, incrementing time\n");
-                    ++genesis.nTime;
-                }
-            }
-
-                        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        }
-
-        printf("After IF\n");
-        genesis.print();
-//        assert(genesis.hashMerkleRoot == uint256("0xd006aa2081c4d917877d5cc6ee942903374978568688d6fd76fc3b0d5fbf7287"));
-//      assert(hashGenesisBlock == uint256("0x831ba083feeef4998e3f12e7143a96660d3889d532c186a98c8e45d78fda68e1"));
-
-        assert(genesis.hashMerkleRoot == uint256("0xd006aa2081c4d917877d5cc6ee942903374978568688d6fd76fc3b0d5fbf7287"));
-        assert(hashGenesisBlock == uint256("0xeb7df35c2dc2ee458a6d6e6f80fb834ad709e6410b6dd6de857f2c50e72850aa"));
-
- */
   
 		vSeeds.push_back(CDNSSeedData("195.54.3.213", "195.54.3.213"));
-//		vSeeds.push_back(CDNSSeedData("37.120.186.85", "37.120.186.85"));
-//		vSeeds.push_back(CDNSSeedData("37.120.190.76", "37.120.190.76"));
-//		vSeeds.push_back(CDNSSeedData("213.136.80.93", "213.136.80.93"));
-//		vSeeds.push_back(CDNSSeedData("213.136.86.202", "213.136.86.202"));
-//		vSeeds.push_back(CDNSSeedData("213.136.86.205", "213.136.86.205"));
-//		vSeeds.push_back(CDNSSeedData("213.136.86.207", "213.136.86.207"));
+		vSeeds.push_back(CDNSSeedData("151.248.118.2", "151.248.118.2"));
 		
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of( 102);                    //uralsdev 04-2015   addresses start with 'i'
-        base58Prefixes[SCRIPT_ADDRESS] = list_of( 5);                    //uralsdev 04-2015   script addresses start with '7'
-        base58Prefixes[SECRET_KEY] =     list_of(204);                    //uralsdev 04-2015  Pubkey +128 uralsdev
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E); //uralsdev 04-2015  'xpub '
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4); //uralsdev 04-2015  'xpriv'
+        base58Prefixes[PUBKEY_ADDRESS] = list_of( 130);                    //uralsdev 09-2017   addresses start with 'u'
+        base58Prefixes[SCRIPT_ADDRESS] = list_of( 5);                    //script addresses start with '7'
+        base58Prefixes[SECRET_KEY] =     list_of(204);                    //Pubkey +128 uralsdev
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E); // 'xpub '
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4); // 'xpriv'
         base58Prefixes[EXT_COIN_TYPE]  = list_of(0x80000005);             // Urals BIP44 coin type is '5'
 
         // Convert the pnSeeds array into usable address objects.
@@ -177,21 +113,21 @@ static CMainParams mainParams;
 //
 // Testnet (v3)
 //
+//TODO: Rebuild testnet and regtest genesis to complify difficulty check
 class CTestNetParams : public CMainParams {
 public:
     CTestNetParams() {
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0x4c;   //uralsdev 04-2015
-        pchMessageStart[1] = 0x1a;   //uralsdev 04-2015
-        pchMessageStart[2] = 0x2c;   //uralsdev 04-2015
-        pchMessageStart[3] = 0xaf;   //uralsdev 04-2015   Testnet
+        pchMessageStart[0] = 0x4c;   
+        pchMessageStart[1] = 0x1a;   
+        pchMessageStart[2] = 0x2c;   
+        pchMessageStart[3] = 0xaf;   
 
         vAlertPubKey = ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
-//        vAlertPubKey = ParseHex("04517d8a699cb43d3938d7b24faaff7cda448ca4ea267723ba614784de661949bf632d6304316b244646dea079735b9a6fc4af804efb4752075b9fe2245e14e412");
-        nDefaultPort = 17443;
-        nRPCPort = 17444;
+        nDefaultPort = 17444;
+        nRPCPort = 17443;
         strDataDir = "testnet3";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
@@ -200,22 +136,18 @@ public:
 	//genesis.nBits    = 0x1e0ffff0;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xe453fa9b1dac51b440076dc8bdbf2b82d6c006232fcff620bcd82bfbc24a2b69"));  //uralsdev 
+        assert(hashGenesisBlock == uint256("0x559287affd03319ca1eb5febe7b8141a8ddfb151634371c2b6be708c023aa9a6"));  //uralsdev 
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        /*vSeeds.push_back(CDNSSeedData("5.56.209.255", "5.56.209.255"));   //uralsdev 04-2015
         vSeeds.push_back(CDNSSeedData("", ""));       //uralsdev 04-2015 vSeeds.push_back(CDNSSeedData("urals.qa", "testnet-seed.urals.qa"));
         *///legacy seeders
-        vSeeds.push_back(CDNSSeedData("Demoserver1", "195.54.3.213"));      //uralsdev 04-2015
-        vSeeds.push_back(CDNSSeedData("", ""));      //uralsdev 04-2015
-        vSeeds.push_back(CDNSSeedData("", ""));       //uralsdev 04-2015
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(111);                    //uralsdev 04-2015   Testnet vorher 139 urals addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = list_of( 196);                    //uralsdev 04-2015   Testnet vorher 19 urals script addresses start with '8' or '9'
-        base58Prefixes[SECRET_KEY]     = list_of(211);                    ///uralsdev 04-2015   Testnet vorher 239  private keys start with '9' or 'c' (Bitcoin defaults)
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF); //uralsdev 04-2015   tpub
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94); //uralsdev 04-2015  tprv
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(141);                    // Testnet addresses start with 'y' or 'z'
+        base58Prefixes[SCRIPT_ADDRESS] = list_of( 196);                    // urals script addresses start with '8' or '9'
+        base58Prefixes[SECRET_KEY]     = list_of(211);                    /// Testnet  private keys start with '9' or 'c' (Bitcoin defaults)
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF); //  tpub
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94); //  tprv
         base58Prefixes[EXT_COIN_TYPE]  = list_of(0x80000001);             // Testnet urals BIP44 coin type is '5' (All coin's testnet default)
     }
     virtual Network NetworkID() const { return CChainParams::TESTNET; }
@@ -244,7 +176,7 @@ public:
         strDataDir = "regtest";
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xe453fa9b1dac51b440076dc8bdbf2b82d6c006232fcff620bcd82bfbc24a2b69"));   // Uralsdev 
+        assert(hashGenesisBlock == uint256("0x559287affd03319ca1eb5febe7b8141a8ddfb151634371c2b6be708c023aa9a6"));   // Uralsdev 
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
