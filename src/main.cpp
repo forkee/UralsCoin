@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Urals developers
+// Copyright (c) 2014-2015 The BitSend developers
+// Copyright (c) 2017 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -59,9 +60,9 @@ bool fLargeWorkInvalidChainFound = false;
 unsigned int nCoinCacheSize = 5000;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
-int64_t CTransaction::nMinTxFee = NMINTXFEE;  // Override with -mintxfee // 12-05-2015 uralsdev old 10000 dash 
+int64_t CTransaction::nMinTxFee = NMINTXFEE;   
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying and mining) */
-int64_t CTransaction::nMinRelayTxFee = NMINRELAYTXFEE; // 12-05-2015 old 1000 dash
+int64_t CTransaction::nMinRelayTxFee = NMINRELAYTXFEE; 
 
 struct COrphanBlock {
     uint256 hashBlock;

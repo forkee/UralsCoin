@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Urals developers
+// Copyright (c) 2014-2015 The BitSend developers
+// Copyright (c) 2017 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,7 +24,6 @@ unsigned int pnSeed[] =
 {
 0x05C4BE52, 0x68EEBC2C, 0x55D6444B, 0x5B996D95, 0x9B5E9244, 0x4FACD744, 0x2D20B813, 0x5D9ED890, 0x6DF82145, 0xD4186F38, 0xD4651074, 0x0219B535, 0x25028591, 0x55D62C10, 0xC62CBE25, 0x461B5D07,0x40E76915, 0x05E7EB35,
 };
-// //uralsdev 04-2015   New Seeds
 
 class CMainParams : public CChainParams {
 public:
@@ -31,10 +31,10 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xa3;    //uralsdev 04-2015   mainc.pp 3072    ggf testnet wert = falshc
-        pchMessageStart[1] = 0xd5;    ///uralsdev 04-2015
-        pchMessageStart[2] = 0xc2;    //uralsdev 04-2015
-        pchMessageStart[3] = 0xf9;    //uralsdev 04-2015
+        pchMessageStart[0] = 0xa3;    
+        pchMessageStart[1] = 0xd5;    
+        pchMessageStart[2] = 0xc2;   
+        pchMessageStart[3] = 0xf9;  
 
         
   //    name, networkVersion, privateKeyPrefix, WIF_Start, CWIF_Start, donate
@@ -162,7 +162,6 @@ static CTestNetParams testNetParams;
 class CRegTestParams : public CTestNetParams {
 public:
     CRegTestParams() {
-      // Alle Parameter hier unverändert
         pchMessageStart[0] = 0xfc;          // Uralsdev 04-2015 old    0xfc
         pchMessageStart[1] = 0xc1;          // Uralsdev 04-2015 old    0xc1
         pchMessageStart[2] = 0xb7;         // Uralsdev 04-2015 old     0xb7
@@ -172,7 +171,6 @@ public:
 
         genesis.nTime    = 1503878400;   //uralsdev 07-2017
         genesis.nNonce   = 2373747;  //uralsdev 06-2017
-        //genesis.nBits = 0x1e0ffff0;        // Uralsdev 
         nDefaultPort = 17445;             // Uralsdev 04-2015 old   19994
         strDataDir = "regtest";
 

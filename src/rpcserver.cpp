@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Urals developers
+// Copyright (c) 2014-2015 The BitSend developers
+// Copyright (c) 2017 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -84,7 +85,7 @@ void RPCTypeCheck(const Object& o,
 int64_t AmountFromValue(const Value& value)
 {
     double dAmount = value.get_real();
-    if (dAmount <= 0.0 || dAmount > 525000000.0)  //uralsdev 04-2015 old 21000000
+    if (dAmount <= 0.0 || dAmount > 525000000.0)  
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount");
     int64_t nAmount = roundint64(dAmount * COIN);
     if (!MoneyRange(nAmount))

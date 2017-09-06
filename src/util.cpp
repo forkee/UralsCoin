@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Urals developers
+// Copyright (c) 2014-2015 The BitSend developers
+// Copyright (c) 2017 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1356,8 +1357,6 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
         int64_t nMedian = vTimeOffsets.median();
         std::vector<int64_t> vSorted = vTimeOffsets.sorted();
         // Only let other nodes change our time by so much
-        // LimecoinX: changed maximum adjust to 10 mins to avoid letting peers change our time too much in case of an attack.
-        // Old (abs64(nMedian) < 70 * 60) Uralsdev 31-05-2015
         if (abs64(nMedian) < 10 * 60)
         {
             nTimeOffset = nMedian;

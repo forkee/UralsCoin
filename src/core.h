@@ -13,7 +13,7 @@
 #include <stdint.h>
 
 #define START_MASTERNODE_PAYMENTS_TESTNET 1498867200 //  01-07-2017 uralsdev
-#define START_MASTERNODE_PAYMENTS 1501545600 // 01-08-2017 uralsdev
+#define START_MASTERNODE_PAYMENTS 1504224000 // 01-09-2017 uralsdev
 
 static const int64_t DARKSEND_COLLATERAL = (0.01*COIN);
 static const int64_t DARKSEND_POOL_MAX = (4999.99*COIN);
@@ -38,8 +38,8 @@ static const int64_t DARKSEND_POOL_MAX = (4999.99*COIN);
 
 #define MASTERNODE_MIN_CONFIRMATIONS           15
 #define MASTERNODE_MIN_DSEEP_SECONDS           (30*60)
-#define MASTERNODE_MIN_DSEE_SECONDS            (10*60) // 5 * 60 old uralsdev 12-05
-#define MASTERNODE_PING_SECONDS                (5*60)  // 1 * 60 old uralsdev 12-05
+#define MASTERNODE_MIN_DSEE_SECONDS            (10*60) 
+#define MASTERNODE_PING_SECONDS                (5*60)  
 #define MASTERNODE_EXPIRATION_SECONDS          (65*60)
 #define MASTERNODE_REMOVAL_SECONDS             (70*60)
 

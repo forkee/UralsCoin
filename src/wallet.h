@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Urals developers
+// Copyright (c) 2014-2015 The BitSend developers
+// Copyright (c) 2017 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_WALLET_H
@@ -56,7 +57,7 @@ enum AvailableCoinsType
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NONDENOMINATED = 3,
-    ONLY_NONDENOMINATED_NOTMN = 4 // ONLY_NONDENOMINATED and not 1000 URALS at the same time
+    ONLY_NONDENOMINATED_NOTMN = 4 // ONLY_NONDENOMINATED and not 50000 URALS at the same time
 };
 
 
