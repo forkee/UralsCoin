@@ -170,12 +170,12 @@ am__liburals_common_a_SOURCES_DIST = activemasternode.cpp base58.cpp \
 	hash/sph_whirlpool.h hash/spork.h sync.h threadsafety.h \
 	tinyformat.h txdb.h txmempool.h ui_interface.h uint256.h \
 	util.h version.h walletdb.h wallet.h compat/glibc_compat.cpp \
-	compat/glibcxx_compat.cpp scrypt.cpp scrypt.h
+	compat/glibcxx_compat.cpp
 am__dirstamp = $(am__leading_dot)dirstamp
 #am__objects_2 = compat/glibc_compat.$(OBJEXT) \
 #	compat/glibcxx_compat.$(OBJEXT)
 am_liburals_common_a_OBJECTS = activemasternode.$(OBJEXT) \
-	base58.$(OBJEXT) allocators.$(OBJEXT) chainparams.$(OBJEXT) scrypt.$(OBJEXT) \
+	base58.$(OBJEXT) allocators.$(OBJEXT) chainparams.$(OBJEXT) \
 	core.$(OBJEXT) darksend.$(OBJEXT) darksend-relay.$(OBJEXT) \
 	masternode.$(OBJEXT) masternode-pos.$(OBJEXT) \
 	masternodeman.$(OBJEXT) masternodeconfig.$(OBJEXT) \
@@ -380,7 +380,7 @@ CC = gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CLIENT_VERSION_BUILD = 3
+CLIENT_VERSION_BUILD = 4
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
 CLIENT_VERSION_MINOR = 0
@@ -603,7 +603,6 @@ BITCOIN_CORE_H = \
   rpcprotocol.h \
   rpcserver.h \
   script.h \
-  scrypt.h \
   serialize.h \
   hash/sph_blake.h \
   hash/sph_bmw.h \
@@ -694,7 +693,7 @@ liburals_common_a_SOURCES = activemasternode.cpp base58.cpp \
 	hash/shavite.c hash/keccak.c hash/skein.c hash/fugue.c \
 	hash/hamsi.c hash/haval.c hash/sha2.c hash/shabal.c \
 	hash/whirlpool.c hash/sph_sha2big.c spork.cpp hash/bmw.c \
-	hash/simd.c hash/cubehash.c hash/blake.c scrypt.cpp $(BITCOIN_CORE_H) \
+	hash/simd.c hash/cubehash.c hash/blake.c $(BITCOIN_CORE_H) \
 	$(am__append_7)
 liburals_cli_a_SOURCES = \
   rpcclient.cpp \
