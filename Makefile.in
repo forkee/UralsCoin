@@ -183,8 +183,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/src/build-aux/install-sh \
 	$(top_srcdir)/src/build-aux/missing COPYING INSTALL \
 	src/build-aux/compile src/build-aux/config.guess \
-	src/build-aux/config.sub src/build-aux/install-sh \
-	src/build-aux/missing
+	src/build-aux/config.sub src/build-aux/depcomp \
+	src/build-aux/install-sh src/build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)

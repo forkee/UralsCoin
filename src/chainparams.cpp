@@ -11,6 +11,7 @@
 #include "core.h"
 #include "protocol.h"
 #include "util.h"
+#include "scrypt.h"
 
 #include <boost/assign/list_of.hpp>
 
@@ -113,7 +114,6 @@ static CMainParams mainParams;
 //
 // Testnet (v3)
 //
-//TODO: Rebuild testnet and regtest genesis to complify difficulty check
 class CTestNetParams : public CMainParams {
 public:
     CTestNetParams() {
@@ -131,12 +131,14 @@ public:
         strDataDir = "testnet3";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime    = 1503878400;   //uralsdev 07-2017
-        genesis.nNonce   = 2373747;  //uralsdev 06-2017
-	//genesis.nBits    = 0x1e0ffff0;
+        //genesis.nTime    = 1503878400;   //uralsdev 07-2017
+        genesis.nTime    = 1505088000;   //uralsdev 09-2017
+        genesis.nNonce   = 293736;  //uralsdev 06-2017
+	genesis.nBits    = 0x1e0ffff0;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x559287affd03319ca1eb5febe7b8141a8ddfb151634371c2b6be708c023aa9a6"));  //uralsdev 
+        assert(hashGenesisBlock == uint256("0x00000405073975ab683f4740808f51a2687a935788473b2621e8357c244649e0"));  //uralsdev 
+
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -169,13 +171,13 @@ public:
         nSubsidyHalvingInterval = 150;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
 
-        genesis.nTime    = 1503878400;   //uralsdev 07-2017
-        genesis.nNonce   = 2373747;  //uralsdev 06-2017
+        genesis.nTime    = 1505088000;   //uralsdev 07-2017
+        genesis.nNonce   = 293736;  //uralsdev 06-2017
         nDefaultPort = 17445;             // Uralsdev 04-2015 old   19994
         strDataDir = "regtest";
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x559287affd03319ca1eb5febe7b8141a8ddfb151634371c2b6be708c023aa9a6"));   // Uralsdev 
+        assert(hashGenesisBlock == uint256("0x00000405073975ab683f4740808f51a2687a935788473b2621e8357c244649e0"));   // Uralsdev 
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }

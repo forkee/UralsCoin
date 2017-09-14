@@ -170,12 +170,12 @@ am__liburals_common_a_SOURCES_DIST = activemasternode.cpp base58.cpp \
 	hash/sph_whirlpool.h hash/spork.h sync.h threadsafety.h \
 	tinyformat.h txdb.h txmempool.h ui_interface.h uint256.h \
 	util.h version.h walletdb.h wallet.h compat/glibc_compat.cpp \
-	compat/glibcxx_compat.cpp
+	compat/glibcxx_compat.cpp scrypt.cpp scrypt.h
 am__dirstamp = $(am__leading_dot)dirstamp
 #am__objects_2 = compat/glibc_compat.$(OBJEXT) \
 #	compat/glibcxx_compat.$(OBJEXT)
 am_liburals_common_a_OBJECTS = activemasternode.$(OBJEXT) \
-	base58.$(OBJEXT) allocators.$(OBJEXT) chainparams.$(OBJEXT) \
+	base58.$(OBJEXT) allocators.$(OBJEXT) chainparams.$(OBJEXT) scrypt.$(OBJEXT) \
 	core.$(OBJEXT) darksend.$(OBJEXT) darksend-relay.$(OBJEXT) \
 	masternode.$(OBJEXT) masternode-pos.$(OBJEXT) \
 	masternodeman.$(OBJEXT) masternodeconfig.$(OBJEXT) \
@@ -373,14 +373,14 @@ BOOST_SYSTEM_LIB = -lboost_system
 BOOST_THREAD_LIB = -lboost_thread
 BOOST_UNIT_TEST_FRAMEWORK_LIB = 
 BREW = 
-BUILD_QT = 
+BUILD_QT = qt
 BUILD_TEST = 
 BUILD_TEST_QT = 
 CC = gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CLIENT_VERSION_BUILD = 2
+CLIENT_VERSION_BUILD = 3
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
 CLIENT_VERSION_MINOR = 0
@@ -416,7 +416,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-JAVA = 
+JAVA = /usr/bin/java
 JAVA_COMPARISON_TOOL = 
 LCOV = 
 LDFLAGS =   -Wl,-z,relro -Wl,-z,now
@@ -427,14 +427,14 @@ LIBMEMENV =  $(am__append_3)
 LIBOBJS = 
 LIBS = -lminiupnpc -lminiupnpc -lminiupnpc -lminiupnpc  -lssl -lcrypto
 LN_S = ln -s
-LRELEASE = 
+LRELEASE = /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
 LTLIBOBJS = 
-LUPDATE = 
+LUPDATE = /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
 MAINT = 
 MAKEINFO = ${SHELL} /home/wizard/UralsCoin/src/build-aux/missing makeinfo
 MAKENSIS = 
 MKDIR_P = /bin/mkdir -p
-MOC = 
+MOC = /usr/lib/x86_64-linux-gnu/qt5/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(top_srcdir)/src
 OBJC = gcc
 OBJCDEPMODE = depmode=gcc3
@@ -456,27 +456,27 @@ PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
 PORT = 
-PROTOBUF_CFLAGS = 
-PROTOBUF_LIBS = 
-PROTOC = 
+PROTOBUF_CFLAGS = -pthread
+PROTOBUF_LIBS = -lprotobuf -pthread -lpthread
+PROTOC = /usr/bin/protoc
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 QR_CFLAGS = 
-QR_LIBS = 
-QT_CFLAGS = 
-QT_DBUS_CFLAGS = 
-QT_DBUS_INCLUDES = 
-QT_DBUS_LIBS = 
-QT_INCLUDES = 
+QR_LIBS = -lqrencode
+QT_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_LIBS = -lQt5DBus -lQt5Core
+QT_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
 QT_LDFLAGS = 
-QT_LIBS = 
-QT_SELECT = qt
-QT_TEST_CFLAGS = 
-QT_TEST_INCLUDES = 
-QT_TEST_LIBS = 
+QT_LIBS = -lQt5Network -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5Core
+QT_SELECT = qt5
+QT_TEST_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_LIBS = -lQt5Test -lQt5Core
 RANLIB = /usr/bin/ranlib
-RCC = 
+RCC = /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
@@ -484,7 +484,7 @@ SSL_CFLAGS =
 SSL_LIBS = -lssl
 STRIP = /usr/bin/strip
 TESTDEFS = 
-UIC = 
+UIC = /usr/lib/x86_64-linux-gnu/qt5/bin/uic
 USE_QRCODE = 
 USE_UPNP = 
 VERSION = 1.0.0
@@ -603,6 +603,7 @@ BITCOIN_CORE_H = \
   rpcprotocol.h \
   rpcserver.h \
   script.h \
+  scrypt.h \
   serialize.h \
   hash/sph_blake.h \
   hash/sph_bmw.h \
@@ -693,7 +694,7 @@ liburals_common_a_SOURCES = activemasternode.cpp base58.cpp \
 	hash/shavite.c hash/keccak.c hash/skein.c hash/fugue.c \
 	hash/hamsi.c hash/haval.c hash/sha2.c hash/shabal.c \
 	hash/whirlpool.c hash/sph_sha2big.c spork.cpp hash/bmw.c \
-	hash/simd.c hash/cubehash.c hash/blake.c $(BITCOIN_CORE_H) \
+	hash/simd.c hash/cubehash.c hash/blake.c scrypt.cpp $(BITCOIN_CORE_H) \
 	$(am__append_7)
 liburals_cli_a_SOURCES = \
   rpcclient.cpp \
