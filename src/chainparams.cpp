@@ -71,6 +71,7 @@ public:
 
   
 		vSeeds.push_back(CDNSSeedData("195.54.3.213", "195.54.3.213"));
+		vSeeds.push_back(CDNSSeedData("185.20.225.229", "185.20.225.229"));
 		vSeeds.push_back(CDNSSeedData("151.248.118.2", "151.248.118.2"));
 		
 
