@@ -15575,13 +15575,13 @@ $as_echo "@%:@define CLIENT_VERSION_MINOR 0" >>confdefs.h
 $as_echo "@%:@define CLIENT_VERSION_REVISION 0" >>confdefs.h
 
 
-$as_echo "@%:@define CLIENT_VERSION_BUILD 4" >>confdefs.h
+$as_echo "@%:@define CLIENT_VERSION_BUILD 6" >>confdefs.h
 
 
 $as_echo "@%:@define CLIENT_VERSION_IS_RELEASE true" >>confdefs.h
 
 
-$as_echo "@%:@define COPYRIGHT_YEAR 2017" >>confdefs.h
+$as_echo "@%:@define COPYRIGHT_YEAR 2018" >>confdefs.h
 
 CLIENT_VERSION_MAJOR=1
 
@@ -15589,11 +15589,11 @@ CLIENT_VERSION_MINOR=0
 
 CLIENT_VERSION_REVISION=0
 
-CLIENT_VERSION_BUILD=4
+CLIENT_VERSION_BUILD=6
 
 CLIENT_VERSION_IS_RELEASE=true
 
-COPYRIGHT_YEAR=2017
+COPYRIGHT_YEAR=2018
 
 
 

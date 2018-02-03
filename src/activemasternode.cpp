@@ -7,7 +7,7 @@
 #include <boost/lexical_cast.hpp>
 
 //
-// Bootup the Masternode, look for a 5000 URALS input and register on the network
+// Bootup the Masternode, look for a 50000 URALS input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {
@@ -404,7 +404,7 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
     // Filter
     BOOST_FOREACH(const COutput& out, vCoins)
     {
-        if(out.tx->vout[out.i].nValue == MASTERNODEAMOUNT*COIN) { //exactly        uralsdev   04-2015
+        if(out.tx->vout[out.i].nValue == MASTERNODEAMOUNT*COIN) { 
             filteredCoins.push_back(out);
         }
     }
