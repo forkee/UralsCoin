@@ -13,7 +13,7 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="94"/>
-        <source>Copyright &amp;copy; 2009-YYYY The Bitcoin and DASH Core developers.
+        <source>Copyright &amp;copy; 2009-YYYY The Urals and DASH Core developers.
 Copyright &amp;copy; 2014-YYYY The Urals Core developers.</source>
         <translation type="unfinished"/>
     </message>
@@ -40,8 +40,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../utilitydialog.cpp" line="30"/>
-        <source>The Bitcoin Core developers</source>
-        <translation>Οι προγραμματιστές του Bitcoin Core</translation>
+        <source>The Urals Core developers</source>
+        <translation>Οι προγραμματιστές του Urals Core</translation>
     </message>
     <message>
         <location filename="../utilitydialog.cpp" line="31"/>
@@ -275,8 +275,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="113"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR URALS&lt;/b&gt;!</source>
-        <translation>ΠΡΟΣΟΧΗ: Εάν κρυπτογραφήσετε το πορτοφόλι σας και χάσετε τον κωδικό, θα χάσετε &lt;b&gt;ΟΛΑ ΤΑ URALS ΣΑΣ&lt;b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BSD&lt;/b&gt;!</source>
+        <translation>ΠΡΟΣΟΧΗ: Εάν κρυπτογραφήσετε το πορτοφόλι σας και χάσετε τον κωδικό, θα χάσετε &lt;b&gt;ΟΛΑ ΤΑ BSD ΣΑΣ&lt;b&gt;!</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="113"/>
@@ -348,410 +348,410 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>UralsGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="76"/>
+        <location filename="../uralsgui.cpp" line="76"/>
         <source>Urals Core</source>
         <translation>Urals Core</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="85"/>
+        <location filename="../uralsgui.cpp" line="85"/>
         <source>Wallet</source>
         <translation>Πορτοφόλι</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="87"/>
+        <location filename="../uralsgui.cpp" line="87"/>
         <source>Node</source>
         <translation>Κόμβος</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="101"/>
-        <location filename="../bitcoingui.cpp" line="498"/>
+        <location filename="../uralsgui.cpp" line="101"/>
+        <location filename="../uralsgui.cpp" line="498"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="227"/>
+        <location filename="../uralsgui.cpp" line="227"/>
         <source>&amp;Overview</source>
         <translation>&amp;Επισκόπηση</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="228"/>
+        <location filename="../uralsgui.cpp" line="228"/>
         <source>Show general overview of wallet</source>
         <translation>Εμφάνισε τη γενική εικόνα του πορτοφολιού</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="234"/>
+        <location filename="../uralsgui.cpp" line="234"/>
         <source>&amp;Send</source>
         <translation>&amp;Αποστολή</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="235"/>
+        <location filename="../uralsgui.cpp" line="235"/>
         <source>Send coins to a Urals address</source>
         <translation>Στείλε νομίσματα σε μια διεύθυνση Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="241"/>
+        <location filename="../uralsgui.cpp" line="241"/>
         <source>&amp;Receive</source>
         <translation>&amp;Παραλαβή </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="242"/>
+        <location filename="../uralsgui.cpp" line="242"/>
         <source>Request payments (generates QR codes and urals: URIs)</source>
         <translation>Αίτηση πληρωμών (δημιουργεί QR codes και διευθύνσεις urals: URls)</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="248"/>
+        <location filename="../uralsgui.cpp" line="248"/>
         <source>&amp;Transactions</source>
         <translation>&amp;Συναλλαγές</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="249"/>
+        <location filename="../uralsgui.cpp" line="249"/>
         <source>Browse transaction history</source>
         <translation>Περιήγηση στο ιστορικό συναλλαγών</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="266"/>
+        <location filename="../uralsgui.cpp" line="266"/>
         <source>E&amp;xit</source>
         <translation>Έ&amp;ξοδος</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="267"/>
+        <location filename="../uralsgui.cpp" line="267"/>
         <source>Quit application</source>
         <translation>Εξοδος από την εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="271"/>
-        <location filename="../bitcoingui.cpp" line="273"/>
+        <location filename="../uralsgui.cpp" line="271"/>
+        <location filename="../uralsgui.cpp" line="273"/>
         <source>&amp;About Urals Core</source>
         <translation>&amp;Σχετικά με το Urals Core</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="274"/>
+        <location filename="../uralsgui.cpp" line="274"/>
         <source>Show information about Urals</source>
         <translation>Εμφάνιση πληροφοριών σχετικά με το Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="277"/>
-        <location filename="../bitcoingui.cpp" line="279"/>
+        <location filename="../uralsgui.cpp" line="277"/>
+        <location filename="../uralsgui.cpp" line="279"/>
         <source>About &amp;Qt</source>
         <translation>Σχετικά με &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="281"/>
+        <location filename="../uralsgui.cpp" line="281"/>
         <source>Show information about Qt</source>
         <translation>Εμφάνισε πληροφορίες σχετικά με Qt</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="283"/>
+        <location filename="../uralsgui.cpp" line="283"/>
         <source>&amp;Options...</source>
         <translation>&amp;Επιλογές...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="284"/>
+        <location filename="../uralsgui.cpp" line="284"/>
         <source>Modify configuration options for Urals</source>
         <translation>Επεργασία  ρυθμίσεων επιλογών για το Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="287"/>
-        <location filename="../bitcoingui.cpp" line="289"/>
+        <location filename="../uralsgui.cpp" line="287"/>
+        <location filename="../uralsgui.cpp" line="289"/>
         <source>&amp;Show / Hide</source>
         <translation>&amp;Εμφάνισε/Κρύψε</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="290"/>
+        <location filename="../uralsgui.cpp" line="290"/>
         <source>Show or hide the main Window</source>
         <translation>Εμφάνιση ή αποκρύψη του κεντρικου παράθυρου </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="292"/>
+        <location filename="../uralsgui.cpp" line="292"/>
         <source>&amp;Encrypt Wallet...</source>
         <translation>&amp;Κρυπτογράφησε το πορτοφόλι</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="293"/>
+        <location filename="../uralsgui.cpp" line="293"/>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Κρυπτογραφήστε τα ιδιωτικά κλειδιά που ανήκουν στο πορτοφόλι σας </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="295"/>
+        <location filename="../uralsgui.cpp" line="295"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Αντίγραφο ασφαλείας του πορτοφολιού</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="296"/>
+        <location filename="../uralsgui.cpp" line="296"/>
         <source>Backup wallet to another location</source>
         <translation>Δημιουργία αντιγράφου ασφαλείας πορτοφολιού σε άλλη τοποθεσία</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="297"/>
+        <location filename="../uralsgui.cpp" line="297"/>
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Άλλαξε κωδικο πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="298"/>
+        <location filename="../uralsgui.cpp" line="298"/>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Αλλαγή του κωδικού κρυπτογράφησης του πορτοφολιού</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="299"/>
+        <location filename="../uralsgui.cpp" line="299"/>
         <source>&amp;Unlock Wallet...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="300"/>
+        <location filename="../uralsgui.cpp" line="300"/>
         <source>Unlock wallet</source>
         <translation>Ξεκλειδωσε το πορτοφολι</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="301"/>
+        <location filename="../uralsgui.cpp" line="301"/>
         <source>&amp;Lock Wallet</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="302"/>
+        <location filename="../uralsgui.cpp" line="302"/>
         <source>Sign &amp;message...</source>
         <translation>Υπογραφή &amp;Μηνύματος...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="303"/>
+        <location filename="../uralsgui.cpp" line="303"/>
         <source>Sign messages with your Urals addresses to prove you own them</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="304"/>
+        <location filename="../uralsgui.cpp" line="304"/>
         <source>&amp;Verify message...</source>
         <translation>&amp;Επιβεβαίωση μηνύματος</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="305"/>
+        <location filename="../uralsgui.cpp" line="305"/>
         <source>Verify messages to ensure they were signed with specified Urals addresses</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="307"/>
+        <location filename="../uralsgui.cpp" line="307"/>
         <source>&amp;Information</source>
         <translation>&amp;Πληροφορία</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="308"/>
+        <location filename="../uralsgui.cpp" line="308"/>
         <source>Show diagnostic information</source>
         <translation>Εμφάνιση διαγνωστικών πληροφοριών</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="309"/>
+        <location filename="../uralsgui.cpp" line="309"/>
         <source>&amp;Debug console</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="310"/>
+        <location filename="../uralsgui.cpp" line="310"/>
         <source>Open debugging console</source>
         <translation>Άνοιγμα κονσόλας αποσφαλμάτωσης</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="311"/>
+        <location filename="../uralsgui.cpp" line="311"/>
         <source>&amp;Network Monitor</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="312"/>
+        <location filename="../uralsgui.cpp" line="312"/>
         <source>Show network monitor</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="313"/>
+        <location filename="../uralsgui.cpp" line="313"/>
         <source>Open &amp;Configuration File</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="314"/>
+        <location filename="../uralsgui.cpp" line="314"/>
         <source>Open configuration file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="316"/>
+        <location filename="../uralsgui.cpp" line="316"/>
         <source>&amp;Sending addresses...</source>
         <translation>Διευθύνσεις αποστολής</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="317"/>
+        <location filename="../uralsgui.cpp" line="317"/>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Προβολή της λίστας των χρησιμοποιημένων διευθύνσεων και ετικετών αποστολής</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="318"/>
+        <location filename="../uralsgui.cpp" line="318"/>
         <source>&amp;Receiving addresses...</source>
         <translation>Διευθύνσεις λήψης</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="319"/>
+        <location filename="../uralsgui.cpp" line="319"/>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Προβολή της λίστας των χρησιμοποιημένων διευθύνσεων και ετικετών λήψεως</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="321"/>
+        <location filename="../uralsgui.cpp" line="321"/>
         <source>Open &amp;URI...</source>
         <translation>&apos;Ανοιγμα &amp;URI</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="322"/>
+        <location filename="../uralsgui.cpp" line="322"/>
         <source>Open a urals: URI or payment request</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="324"/>
+        <location filename="../uralsgui.cpp" line="324"/>
         <source>&amp;Command-line options</source>
         <translation>&amp;Επιλογές γραμμής εντολών</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="325"/>
+        <location filename="../uralsgui.cpp" line="325"/>
         <source>Show the Urals Core help message to get a list with possible Urals command-line options</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="361"/>
+        <location filename="../uralsgui.cpp" line="361"/>
         <source>&amp;File</source>
         <translation>&amp;Αρχείο</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="375"/>
+        <location filename="../uralsgui.cpp" line="375"/>
         <source>&amp;Settings</source>
         <translation>&amp;Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="388"/>
+        <location filename="../uralsgui.cpp" line="388"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="395"/>
+        <location filename="../uralsgui.cpp" line="395"/>
         <source>&amp;Help</source>
         <translation>&amp;Βοήθεια</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="406"/>
+        <location filename="../uralsgui.cpp" line="406"/>
         <source>Tabs toolbar</source>
         <translation>Εργαλειοθήκη καρτελών</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="493"/>
-        <location filename="../bitcoingui.cpp" line="498"/>
+        <location filename="../uralsgui.cpp" line="493"/>
+        <location filename="../uralsgui.cpp" line="498"/>
         <source>Urals client</source>
         <translation>Πελάτης Urals</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="643"/>
+        <location filename="../uralsgui.cpp" line="643"/>
         <source>%n active connection(s) to Urals network</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="655"/>
+        <location filename="../uralsgui.cpp" line="655"/>
         <source>Synchronizing with network...</source>
         <translation>Συγχρονισμός με το δίκτυο...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="658"/>
+        <location filename="../uralsgui.cpp" line="658"/>
         <source>Importing blocks from disk...</source>
         <translation>Εισαγωγή μπλοκ από τον σκληρο δίσκο ... </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="661"/>
+        <location filename="../uralsgui.cpp" line="661"/>
         <source>Reindexing blocks on disk...</source>
         <translation>Φόρτωση ευρετηρίου μπλοκ στον σκληρο δισκο...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="665"/>
+        <location filename="../uralsgui.cpp" line="665"/>
         <source>No block source available...</source>
         <translation>Η πηγή του μπλοκ δεν ειναι διαθέσιμη... </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="675"/>
+        <location filename="../uralsgui.cpp" line="675"/>
         <source>Processed %1 blocks of transaction history.</source>
         <translation>Έγινε λήψη %1 μπλοκ ιστορικού συναλλαγών</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="680"/>
+        <location filename="../uralsgui.cpp" line="680"/>
         <source>Up to date</source>
         <translation>Ενημερωμένο</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="701"/>
+        <location filename="../uralsgui.cpp" line="701"/>
         <source>%n hour(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="705"/>
+        <location filename="../uralsgui.cpp" line="705"/>
         <source>%n day(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="709"/>
-        <location filename="../bitcoingui.cpp" line="715"/>
+        <location filename="../uralsgui.cpp" line="709"/>
+        <location filename="../uralsgui.cpp" line="715"/>
         <source>%n week(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="715"/>
+        <location filename="../uralsgui.cpp" line="715"/>
         <source>%1 and %2</source>
         <translation>%1 και %2</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="715"/>
+        <location filename="../uralsgui.cpp" line="715"/>
         <source>%n year(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="719"/>
+        <location filename="../uralsgui.cpp" line="719"/>
         <source>%1 behind</source>
         <translation>%1 πίσω</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="724"/>
+        <location filename="../uralsgui.cpp" line="724"/>
         <source>Catching up...</source>
         <translation>Ενημέρωση...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="740"/>
+        <location filename="../uralsgui.cpp" line="740"/>
         <source>Last received block was generated %1 ago.</source>
         <translation>Το τελευταίο μπλοκ που ελήφθη δημιουργήθηκε %1 πριν.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="742"/>
+        <location filename="../uralsgui.cpp" line="742"/>
         <source>Transactions after this will not yet be visible.</source>
         <translation>Οι συναλλαγές μετά από αυτό δεν θα είναι ακόμη ορατες.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="755"/>
+        <location filename="../uralsgui.cpp" line="755"/>
         <source>Urals</source>
         <translation>Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="769"/>
+        <location filename="../uralsgui.cpp" line="769"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="772"/>
+        <location filename="../uralsgui.cpp" line="772"/>
         <source>Warning</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="775"/>
+        <location filename="../uralsgui.cpp" line="775"/>
         <source>Information</source>
         <translation>Πληροφορία</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="854"/>
+        <location filename="../uralsgui.cpp" line="854"/>
         <source>Sent transaction</source>
         <translation>Η συναλλαγή απεστάλη</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="854"/>
+        <location filename="../uralsgui.cpp" line="854"/>
         <source>Incoming transaction</source>
         <translation>Εισερχόμενη συναλλαγή</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="855"/>
+        <location filename="../uralsgui.cpp" line="855"/>
         <source>Date: %1
 Amount: %2
 Type: %3
@@ -764,17 +764,17 @@ Address: %4
 </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="926"/>
+        <location filename="../uralsgui.cpp" line="926"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Το πορτοφόλι είναι &lt;b&gt;κρυπτογραφημένο&lt;/b&gt; και &lt;b&gt;ξεκλείδωτο&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="936"/>
+        <location filename="../uralsgui.cpp" line="936"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization only</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="946"/>
+        <location filename="../uralsgui.cpp" line="946"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Το πορτοφόλι είναι &lt;b&gt;κρυπτογραφημένο&lt;/b&gt; και &lt;b&gt;κλειδωμένο&lt;/b&gt;</translation>
     </message>
@@ -1136,13 +1136,13 @@ Address: %4
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="78"/>
-        <source>Use 2 separate Xnodes to mix funds up to 1000 URALS</source>
-        <translation>Χρησιμοποίηση 2 ξεχωριστών Xnodes για σμίξη χρημάτων μέχρι και 1000 URALS</translation>
+        <source>Use 2 separate Xnodes to mix funds up to 1000 BSD</source>
+        <translation>Χρησιμοποίηση 2 ξεχωριστών Xnodes για σμίξη χρημάτων μέχρι και 1000 BSD</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="91"/>
-        <source>Use 8 separate Xnodes to mix funds up to 1000 URALS</source>
-        <translation>Χρησιμοποίηση 8 ξεχωριστών Xnodes για σμίξη χρημάτων μέχρι και 1000 URALS</translation>
+        <source>Use 8 separate Xnodes to mix funds up to 1000 BSD</source>
+        <translation>Χρησιμοποίηση 8 ξεχωριστών Xnodes για σμίξη χρημάτων μέχρι και 1000 BSD</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="104"/>
@@ -1151,18 +1151,18 @@ Address: %4
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="117"/>
-        <source>This option is the quickest and will cost about ~0.025 URALS to anonymize 1000 URALS</source>
-        <translation>Αυτή η επιλογή είναι η γρογορότερη και θα κοστίσει γύρω στα ~0.025 URALS για να ανωνυμοποιηθούν 1000 URALS</translation>
+        <source>This option is the quickest and will cost about ~0.025 BSD to anonymize 1000 BSD</source>
+        <translation>Αυτή η επιλογή είναι η γρογορότερη και θα κοστίσει γύρω στα ~0.025 BSD για να ανωνυμοποιηθούν 1000 BSD</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="130"/>
-        <source>This option is moderately fast and will cost about 0.05 URALS to anonymize 1000 URALS</source>
-        <translation>Αυτή η επιλογή είναι σχετικά γρήγορη και θα κοστίσει περίπου  0.05 URALS για να ανωνυμοποιηθούν 1000 URALS</translation>
+        <source>This option is moderately fast and will cost about 0.05 BSD to anonymize 1000 BSD</source>
+        <translation>Αυτή η επιλογή είναι σχετικά γρήγορη και θα κοστίσει περίπου  0.05 BSD για να ανωνυμοποιηθούν 1000 BSD</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="156"/>
-        <source>0.1 URALS per 1000 URALS you anonymize.</source>
-        <translation>0.1 URALS για κάθε 1000 URALS που ανωνυμοποιείτε</translation>
+        <source>0.1 BSD per 1000 BSD you anonymize.</source>
+        <translation>0.1 BSD για κάθε 1000 BSD που ανωνυμοποιείτε</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="143"/>
@@ -1810,8 +1810,8 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="349"/>
-        <source>0 URALS</source>
-        <translation>0 URALS</translation>
+        <source>0 BSD</source>
+        <translation>0 BSD</translation>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="356"/>
@@ -1820,8 +1820,8 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="363"/>
-        <source>0 URALS / 0 Rounds</source>
-        <translation>0 URALS / 0 Γύροι</translation>
+        <source>0 BSD / 0 Rounds</source>
+        <translation>0 BSD / 0 Γύροι</translation>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="370"/>
@@ -3227,8 +3227,8 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message>
         <location filename="../splashscreen.cpp" line="35"/>
-        <source>The Bitcoin Core developers</source>
-        <translation>Οι προγραμματιστές του Bitcoin Core</translation>
+        <source>The Urals Core developers</source>
+        <translation>Οι προγραμματιστές του Urals Core</translation>
     </message>
     <message>
         <location filename="../splashscreen.cpp" line="36"/>
@@ -3871,7 +3871,7 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message numerus="yes">
         <location filename="../walletmodel.cpp" line="271"/>
-        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %n URALS.</source>
+        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %n BSD.</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
 </context>
@@ -4133,7 +4133,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Urals Alert&quot; admin@foo.co
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="138"/>
-        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 URALS.</source>
+        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 BSD.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4856,8 +4856,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="306"/>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Ρυθμίσεις SSL: (ανατρέξτε στο Bitcoin Wiki για οδηγίες ρυθμίσεων SSL)</translation>
+        <source>RPC SSL options: (see the Urals Wiki for SSL setup instructions)</source>
+        <translation>Ρυθμίσεις SSL: (ανατρέξτε στο Urals Wiki για οδηγίες ρυθμίσεων SSL)</translation>
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="307"/>
@@ -4906,8 +4906,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="316"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Ρυθμίσεις SSL: (ανατρέξτε στο Bitcoin Wiki για οδηγίες ρυθμίσεων SSL)</translation>
+        <source>SSL options: (see the Urals Wiki for SSL setup instructions)</source>
+        <translation>Ρυθμίσεις SSL: (ανατρέξτε στο Urals Wiki για οδηγίες ρυθμίσεων SSL)</translation>
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="317"/>

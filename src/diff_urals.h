@@ -17,7 +17,7 @@
 
 unsigned int static DUAL_KGW3(const CBlockIndex* pindexLast, const CBlockHeader *pblock) {
 	// current difficulty formula, ERC3 - DUAL_KGW3, written by Christian Knoepke - apfelbaum@email.de
-	// Urals and Eropecoin Developer
+	// BitSend and Eropecoin Developer
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
 	bool kgwdebug=false;
@@ -84,7 +84,7 @@ unsigned int static DUAL_KGW3(const CBlockIndex* pindexLast, const CBlockHeader 
 	int64_t nActualTime1 = pindexLast->GetBlockTime() - pindexLast->pprev->GetBlockTime();
 	int64_t nActualTimespanshort = nActualTime1;	
 	
-	// Retarget BTC Original ...not exactly
+	// Retarget BSD Original ...not exactly
 	if(nActualTime1 < 0) nActualTime1 = Blocktime;
 
 	if (nActualTime1 < Blocktime / 3)
@@ -95,7 +95,7 @@ unsigned int static DUAL_KGW3(const CBlockIndex* pindexLast, const CBlockHeader 
     kgw_dual2 *= nActualTime1;
     kgw_dual2 /= Blocktime;
 	
-	//Fusion from Retarget and Classic KGW3 (Urals=)
+	//Fusion from Retarget and Classic KGW3 (Urals)
 	
 	CBigNum bnNew;
 	bnNew = ((kgw_dual2 + kgw_dual1)/2);
@@ -111,7 +111,7 @@ unsigned int static DUAL_KGW3(const CBlockIndex* pindexLast, const CBlockHeader 
 		}
 
 	
-	//BitBreak Urals
+	//BitBreak 
 	// Reduce difficulty if current block generation time has already exceeded maximum time limit.
 	const int nLongTimeLimit   = 6 * 60 * 60; 
     if(kgwdebug)
@@ -124,7 +124,7 @@ unsigned int static DUAL_KGW3(const CBlockIndex* pindexLast, const CBlockHeader 
 	if ((pblock-> nTime - pindexLast->GetBlockTime()) > nLongTimeLimit)  //block.nTime 
 	{
 		bnNew = Params().ProofOfWorkLimit();
-       	if(kgwdebug)LogPrintf("<URALS> Maximum block time hit - cute diff %08x %s\n", bnNew.GetCompact(), bnNew.ToString().c_str()); 
+       	if(kgwdebug)LogPrintf("<BSD> Maximum block time hit - cute diff %08x %s\n", bnNew.GetCompact(), bnNew.ToString().c_str()); 
 	}
 
     if (bnNew > Params().ProofOfWorkLimit()) {
@@ -135,13 +135,13 @@ unsigned int static DUAL_KGW3(const CBlockIndex* pindexLast, const CBlockHeader 
 
 
 unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const CBlockHeader *pblock) {
-    /* current difficulty formula, Dash - DarkGravity v3, written by Evan Duffield - evan@uralspay.io */
+    /* current difficulty formula, Dash - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     int64_t nActualTimespan = 0;
     int64_t LastBlockTime = 0;
-    int64_t PastBlocksMin = 24;  // URALS 14  - OLD 24
-    int64_t PastBlocksMax = 24;  // URALS 140 - OLD 24
+    int64_t PastBlocksMin = 24;  // BSD 14  - OLD 24
+    int64_t PastBlocksMax = 24;  // BSD 140 - OLD 24
     int64_t CountBlocks = 0;
     CBigNum PastDifficultyAverage;
     CBigNum PastDifficultyAveragePrev;
@@ -195,8 +195,8 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
         const CBlockIndex *BlockReading = pindexLast;
 		/// Shortbeak
 		// const CBlockIndex* pindexFirst = pindexLast;
-        const CBlockHeader *BlockCreating = pblock;// Uralsdev add from old KGW
-        BlockCreating = BlockCreating; //Uralsdev add from old KGW
+        const CBlockHeader *BlockCreating = pblock;// 
+        BlockCreating = BlockCreating; //
         uint64_t PastBlocksMass = 0;
         int64_t PastRateActualSeconds = 0;
         int64_t PastRateTargetSeconds = 0;
@@ -216,12 +216,12 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
                 if (i == 1) { PastDifficultyAverage.SetCompact(BlockReading->nBits); }
                 else { PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev; }
                 PastDifficultyAveragePrev = PastDifficultyAverage;
-                 if (LatestBlockTime < BlockReading->GetBlockTime()) //Fix Uralsdev
+                 if (LatestBlockTime < BlockReading->GetBlockTime()) //Fix
                  {
                  	LatestBlockTime = BlockReading->GetBlockTime();
                  }
 
-                PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime(); //Fix Uralsdev
+                PastRateActualSeconds = LatestBlockTime - BlockReading->GetBlockTime(); //Fix 
                 PastRateTargetSeconds = TargetBlocksSpacingSeconds * PastBlocksMass;
                 PastRateAdjustmentRatio = double(1);
                 if (BlockReading->nHeight > 139800){
@@ -231,8 +231,8 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
         else {
                 if (PastRateActualSeconds < 1) { PastRateActualSeconds = 1; } 
         	
-        }//Fix Uralsdev new KGW
-                // else { if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }; } //Fix Uralsdev old KGW
+        }//Fix new KGW
+                // else { if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }; } //Fix vold KGW
                 if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
                 PastRateAdjustmentRatio = double(PastRateTargetSeconds) / double(PastRateActualSeconds);
                 }
@@ -243,7 +243,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
                         EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228));
                 }
                 // KGW 3
-                // EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228)); // Fix Uralsdev
+                // EventHorizonDeviation = 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228)); // Fix 
                 EventHorizonDeviationFast = EventHorizonDeviation;
                 EventHorizonDeviationSlow = 1 / EventHorizonDeviation;
 
@@ -297,7 +297,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 		}
 		else
 		{
-	// Uralsdev for 11.1.34 URALS BitBreak function
+	// for 11.1.34 BitBreak function
 	const int nLongTimebnNew   = 3500;
 	bnNew = bnNew * nLongTimebnNew;
 		}
@@ -309,7 +309,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
     if (bnNew > Params().ProofOfWorkLimit()) {
         bnNew = Params().ProofOfWorkLimit();
     }
-// Uralsdev 22-05-2015
+// 22-05-2015
    
     if(fDebug){
     printf("Difficulty Retarget - Kimoto Gravity Well\n");
@@ -437,8 +437,7 @@ unsigned int static GetNextWorkRequired_Delta(const CBlockIndex* pindexLast, con
     {
         nDeltaTimespan = pindexFirst->GetBlockTime() - pindexFirst->pprev->GetBlockTime();
         // Prevent bad/negative block times - switch them for a fixed time.
-        if (nDeltaTimespan <= nBadTimeLimit)
-            nDeltaTimespan = nBadTimeReplace;
+        if (nDeltaTimespan <= nBadTimeLimit)            nDeltaTimespan = nBadTimeReplace;
 
         if (i<= nShortFrame)
             nShortTimespan += nDeltaTimespan;

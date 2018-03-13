@@ -60,16 +60,17 @@ QT_FORMS_UI = \
   forms/sendcoinsdialog.ui \
   forms/sendcoinsentry.ui \
   forms/signverifymessagedialog.ui \
-  forms/transactiondescdialog.ui
+  forms/transactiondescdialog.ui \
+  forms/masternodelist.ui
 
 QT_MOC_CPP = \
   moc_addressbookpage.cpp \
   moc_addresstablemodel.cpp \
   moc_askpassphrasedialog.cpp \
-  moc_bitcoinaddressvalidator.cpp \
-  moc_bitcoinamountfield.cpp \
-  moc_bitcoingui.cpp \
-  moc_bitcoinunits.cpp \
+  moc_uralsaddressvalidator.cpp \
+  moc_uralsamountfield.cpp \
+  moc_uralsgui.cpp \
+  moc_uralsunits.cpp \
   moc_clientmodel.cpp \
   moc_coincontroldialog.cpp \
   moc_coincontroltreewidget.cpp \
@@ -108,9 +109,10 @@ QT_MOC_CPP = \
   moc_verticallabel.cpp \
   moc_walletframe.cpp \
   moc_walletmodel.cpp \
-  moc_walletview.cpp
+  moc_walletview.cpp \
+  moc_masternodelist.cpp
 
-BITCOIN_MM = \
+URALS_MM = \
   macdockiconhandler.mm \
   macnotificationhandler.mm
 
@@ -127,14 +129,14 @@ PROTOBUF_CC = paymentrequest.pb.cc
 PROTOBUF_H = paymentrequest.pb.h
 PROTOBUF_PROTO = paymentrequest.proto
 
-BITCOIN_QT_H = \
+URALS_QT_H = \
   addressbookpage.h \
   addresstablemodel.h \
   askpassphrasedialog.h \
-  bitcoinaddressvalidator.h \
-  bitcoinamountfield.h \
-  bitcoingui.h \
-  bitcoinunits.h \
+  uralsaddressvalidator.h \
+  uralsamountfield.h \
+  uralsgui.h \
+  uralsunits.h \
   clientmodel.h \
   coincontroldialog.h \
   coincontroltreewidget.h \
@@ -178,15 +180,16 @@ BITCOIN_QT_H = \
   walletmodel.h \
   walletmodeltransaction.h \
   walletview.h \
-  winshutdownmonitor.h
+  winshutdownmonitor.h \
+  masternodelist.h
 
 RES_ICONS = \
   res/icons/add.png \
   res/icons/address-book.png \
-  res/icons/bitcoin.ico \
-  res/icons/bitcoin.png \
-  res/icons/bitcoin_testnet.ico \
-  res/icons/bitcoin_testnet.png \
+  res/icons/urals.ico \
+  res/icons/urals.png \
+  res/icons/urals_testnet.ico \
+  res/icons/urals_testnet.png \
   res/icons/clock1.png \
   res/icons/clock2.png \
   res/icons/clock3.png \
@@ -232,12 +235,12 @@ RES_ICONS = \
   res/icons/browse.png
 
 
-BITCOIN_QT_CPP = \
+URALS_QT_CPP = \
   urals.cpp \
-  bitcoinaddressvalidator.cpp \
-  bitcoinamountfield.cpp \
-  bitcoingui.cpp \
-  bitcoinunits.cpp \
+  uralsaddressvalidator.cpp \
+  uralsamountfield.cpp \
+  uralsgui.cpp \
+  uralsunits.cpp \
   clientmodel.cpp \
   csvmodelwriter.cpp \
   darksendconfig.cpp \
@@ -257,7 +260,7 @@ BITCOIN_QT_CPP = \
   winshutdownmonitor.cpp
 
 if ENABLE_WALLET
-BITCOIN_QT_CPP += \
+URALS_QT_CPP += \
   addressbookpage.cpp \
   addresstablemodel.cpp \
   askpassphrasedialog.cpp \
@@ -314,11 +317,11 @@ RES_CSS = \
   
 RES_MOVIES = $(wildcard res/movies/spinner-*.png)
 
-URALS_RC = res/urals-qt-res.rc
+BSD_RC = res/urals-qt-res.rc
 
 liburalsqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(QT_INCLUDES) \
   -I$(top_srcdir)/src/qt/forms $(QT_DBUS_INCLUDES)
-liburalsqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+liburalsqt_a_SOURCES = $(URALS_QT_CPP) $(URALS_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(RES_CSS)
 
 nodist_liburalsqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
@@ -336,16 +339,16 @@ urals_qt_CPPFLAGS = $(AM_CPPFLAGS) $(QT_INCLUDES) \
   -I$(top_srcdir)/src/qt/forms
 urals_qt_SOURCES = urals.cpp
 if TARGET_DARWIN
-  urals_qt_SOURCES += $(BITCOIN_MM)
+  urals_qt_SOURCES += $(URALS_MM)
 endif
 if TARGET_WINDOWS
-  urals_qt_SOURCES += $(URALS_RC)
+  urals_qt_SOURCES += $(BSD_RC)
 endif
-urals_qt_LDADD = liburalsqt.a $(LIBBITCOIN_SERVER)
+urals_qt_LDADD = liburalsqt.a $(LIBURALS_SERVER)
 if ENABLE_WALLET
-urals_qt_LDADD += $(LIBBITCOIN_WALLET)
+urals_qt_LDADD += $(LIBURALS_WALLET)
 endif
-urals_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBLEVELDB) $(LIBMEMENV) \
+urals_qt_LDADD += $(LIBURALS_CLI) $(LIBURALS_COMMON) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS)
 urals_qt_LDFLAGS = $(QT_LDFLAGS)
 
@@ -361,7 +364,7 @@ QT_QM=$(QT_TS:.ts=.qm)
 uralsstrings.cpp: FORCE
 	$(MAKE) -C $(top_srcdir)/src qt/uralsstrings.cpp
 
-translate: uralsstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: uralsstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(URALS_QT_CPP) $(URALS_QT_H) $(URALS_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	@QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts locale/urals_en.ts
 

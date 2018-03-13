@@ -1,12 +1,12 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2011-2015 The Urals Core developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NOTIFICATOR_H
-#define NOTIFICATOR_H
+#ifndef URALS_QT_NOTIFICATOR_H
+#define URALS_QT_NOTIFICATOR_H
 
 #if defined(HAVE_CONFIG_H)
-#include "urals-config.h"
+#include "config/urals-config.h"
 #endif
 
 #include <QIcon>
@@ -40,7 +40,7 @@ public:
         Critical        /**< An error occurred */
     };
 
-public slots:
+public Q_SLOTS:
     /** Show notification message.
        @param[in] cls    general message class
        @param[in] title  title shown with message
@@ -77,4 +77,4 @@ private:
 #endif
 };
 
-#endif // NOTIFICATOR_H
+#endif // URALS_QT_NOTIFICATOR_H

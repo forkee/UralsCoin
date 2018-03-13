@@ -13,7 +13,7 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="94"/>
-        <source>Copyright &amp;copy; 2009-YYYY The Bitcoin and DASH Core developers.
+        <source>Copyright &amp;copy; 2009-YYYY The Urals and DASH Core developers.
 Copyright &amp;copy; 2014-YYYY The Urals Core developers.</source>
         <translation type="unfinished"/>
     </message>
@@ -40,8 +40,8 @@ Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in d
     </message>
     <message>
         <location filename="../utilitydialog.cpp" line="30"/>
-        <source>The Bitcoin Core developers</source>
-        <translation>De Bitcoin Core ontwikkelaars</translation>
+        <source>The Urals Core developers</source>
+        <translation>De Urals Core ontwikkelaars</translation>
     </message>
     <message>
         <location filename="../utilitydialog.cpp" line="31"/>
@@ -275,8 +275,8 @@ Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in d
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="113"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR URALS&lt;/b&gt;!</source>
-        <translation>Opgelet: Wanneer u uw beurs encrypteert en paswoordzin verliest, de zal u &lt;b&gt;AL UW URALS VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BSD&lt;/b&gt;!</source>
+        <translation>Opgelet: Wanneer u uw beurs encrypteert en paswoordzin verliest, de zal u &lt;b&gt;AL UW BSD VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="113"/>
@@ -348,411 +348,411 @@ Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in d
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>UralsGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="76"/>
+        <location filename="../uralsgui.cpp" line="76"/>
         <source>Urals Core</source>
         <translation>Urals Core</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="85"/>
+        <location filename="../uralsgui.cpp" line="85"/>
         <source>Wallet</source>
         <translation>Portemonnee</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="87"/>
+        <location filename="../uralsgui.cpp" line="87"/>
         <source>Node</source>
         <translation>Node</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="101"/>
-        <location filename="../bitcoingui.cpp" line="498"/>
+        <location filename="../uralsgui.cpp" line="101"/>
+        <location filename="../uralsgui.cpp" line="498"/>
         <source>[testnet]</source>
         <translation>[testnetwerk]</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="227"/>
+        <location filename="../uralsgui.cpp" line="227"/>
         <source>&amp;Overview</source>
         <translation>&amp;Overzicht</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="228"/>
+        <location filename="../uralsgui.cpp" line="228"/>
         <source>Show general overview of wallet</source>
         <translation>Toon algemeen overzicht van de portemonnee</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="234"/>
+        <location filename="../uralsgui.cpp" line="234"/>
         <source>&amp;Send</source>
         <translation>&amp;Versturen</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="235"/>
+        <location filename="../uralsgui.cpp" line="235"/>
         <source>Send coins to a Urals address</source>
         <translation>Verzend munten naar een Urals adres</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="241"/>
+        <location filename="../uralsgui.cpp" line="241"/>
         <source>&amp;Receive</source>
         <translation>&amp;Ontvangen</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="242"/>
+        <location filename="../uralsgui.cpp" line="242"/>
         <source>Request payments (generates QR codes and urals: URIs)</source>
         <translation>Vraag betaling (genereert QR codes en urals: URIs)</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="248"/>
+        <location filename="../uralsgui.cpp" line="248"/>
         <source>&amp;Transactions</source>
         <translation>&amp;Transacties</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="249"/>
+        <location filename="../uralsgui.cpp" line="249"/>
         <source>Browse transaction history</source>
         <translation>Blader door transactieverleden</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="266"/>
+        <location filename="../uralsgui.cpp" line="266"/>
         <source>E&amp;xit</source>
         <translation>&amp;Afsluiten</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="267"/>
+        <location filename="../uralsgui.cpp" line="267"/>
         <source>Quit application</source>
         <translation>Programma afsluiten</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="271"/>
-        <location filename="../bitcoingui.cpp" line="273"/>
+        <location filename="../uralsgui.cpp" line="271"/>
+        <location filename="../uralsgui.cpp" line="273"/>
         <source>&amp;About Urals Core</source>
         <translation>&amp;Over Urals Core</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="274"/>
+        <location filename="../uralsgui.cpp" line="274"/>
         <source>Show information about Urals</source>
         <translation>Toon informatie over Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="277"/>
-        <location filename="../bitcoingui.cpp" line="279"/>
+        <location filename="../uralsgui.cpp" line="277"/>
+        <location filename="../uralsgui.cpp" line="279"/>
         <source>About &amp;Qt</source>
         <translation>Over &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="281"/>
+        <location filename="../uralsgui.cpp" line="281"/>
         <source>Show information about Qt</source>
         <translation>Toon informatie over Qt</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="283"/>
+        <location filename="../uralsgui.cpp" line="283"/>
         <source>&amp;Options...</source>
         <translation>O&amp;pties...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="284"/>
+        <location filename="../uralsgui.cpp" line="284"/>
         <source>Modify configuration options for Urals</source>
         <translation>Aanpassen van configuratie opties voor Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="287"/>
-        <location filename="../bitcoingui.cpp" line="289"/>
+        <location filename="../uralsgui.cpp" line="287"/>
+        <location filename="../uralsgui.cpp" line="289"/>
         <source>&amp;Show / Hide</source>
         <translation>&amp;Toon / Verberg</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="290"/>
+        <location filename="../uralsgui.cpp" line="290"/>
         <source>Show or hide the main Window</source>
         <translation>Toon of verberg het hoofdvenster</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="292"/>
+        <location filename="../uralsgui.cpp" line="292"/>
         <source>&amp;Encrypt Wallet...</source>
         <translation>&amp;Versleutel Portemonnee...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="293"/>
+        <location filename="../uralsgui.cpp" line="293"/>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Versleutel de geheime sleutels die bij uw portemonnee horen</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="295"/>
+        <location filename="../uralsgui.cpp" line="295"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Backup Portemonnee...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="296"/>
+        <location filename="../uralsgui.cpp" line="296"/>
         <source>Backup wallet to another location</source>
         <translation>Backup portemonnee naar een andere locatie</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="297"/>
+        <location filename="../uralsgui.cpp" line="297"/>
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Wijzig Wachtwoord</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="298"/>
+        <location filename="../uralsgui.cpp" line="298"/>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Wijzig het wachtwoord voor uw portemonneversleuteling</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="299"/>
+        <location filename="../uralsgui.cpp" line="299"/>
         <source>&amp;Unlock Wallet...</source>
         <translation>&amp;Ontgrendel portemonnee</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="300"/>
+        <location filename="../uralsgui.cpp" line="300"/>
         <source>Unlock wallet</source>
         <translation>Open portemonnee</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="301"/>
+        <location filename="../uralsgui.cpp" line="301"/>
         <source>&amp;Lock Wallet</source>
         <translation>&amp;Vergrendel portemonnee</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="302"/>
+        <location filename="../uralsgui.cpp" line="302"/>
         <source>Sign &amp;message...</source>
         <translation>&amp;Onderteken bericht...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="303"/>
+        <location filename="../uralsgui.cpp" line="303"/>
         <source>Sign messages with your Urals addresses to prove you own them</source>
         <translation>Onderteken berichten met uw Urals adres om te bewijzen dat u deze bezit</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="304"/>
+        <location filename="../uralsgui.cpp" line="304"/>
         <source>&amp;Verify message...</source>
         <translation>&amp;Verifiëer bericht...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="305"/>
+        <location filename="../uralsgui.cpp" line="305"/>
         <source>Verify messages to ensure they were signed with specified Urals addresses</source>
         <translation>Verifieer berichten om zeket te zijn dat deze werden ondertekend met het specifiek Urals adres</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="307"/>
+        <location filename="../uralsgui.cpp" line="307"/>
         <source>&amp;Information</source>
         <translation>&amp;Informatie</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="308"/>
+        <location filename="../uralsgui.cpp" line="308"/>
         <source>Show diagnostic information</source>
         <translation>Toon diagnostische informatie</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="309"/>
+        <location filename="../uralsgui.cpp" line="309"/>
         <source>&amp;Debug console</source>
         <translation>&amp;Debug console</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="310"/>
+        <location filename="../uralsgui.cpp" line="310"/>
         <source>Open debugging console</source>
         <translation>Open debugging console</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="311"/>
+        <location filename="../uralsgui.cpp" line="311"/>
         <source>&amp;Network Monitor</source>
         <translation>&amp;Netwerk Monitor</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="312"/>
+        <location filename="../uralsgui.cpp" line="312"/>
         <source>Show network monitor</source>
         <translation>Toon netwerk monitor</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="313"/>
+        <location filename="../uralsgui.cpp" line="313"/>
         <source>Open &amp;Configuration File</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="314"/>
+        <location filename="../uralsgui.cpp" line="314"/>
         <source>Open configuration file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="316"/>
+        <location filename="../uralsgui.cpp" line="316"/>
         <source>&amp;Sending addresses...</source>
         <translation>&amp;Adressen aan het versturen.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="317"/>
+        <location filename="../uralsgui.cpp" line="317"/>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Toon de lijst met gebruikt verzend adressen en labels</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="318"/>
+        <location filename="../uralsgui.cpp" line="318"/>
         <source>&amp;Receiving addresses...</source>
         <translation>&amp;Adressen aan het ontvangen...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="319"/>
+        <location filename="../uralsgui.cpp" line="319"/>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Toon de lijst met gebruikte ontvangst adressen en labels</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="321"/>
+        <location filename="../uralsgui.cpp" line="321"/>
         <source>Open &amp;URI...</source>
         <translation>Open &amp;URI...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="322"/>
+        <location filename="../uralsgui.cpp" line="322"/>
         <source>Open a urals: URI or payment request</source>
         <translation>Open een urals: URI of betalingsverzoek</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="324"/>
+        <location filename="../uralsgui.cpp" line="324"/>
         <source>&amp;Command-line options</source>
         <translation>&amp;Commandoregel-opties</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="325"/>
+        <location filename="../uralsgui.cpp" line="325"/>
         <source>Show the Urals Core help message to get a list with possible Urals command-line options</source>
         <translation>Geef het help bericht weer om een lijst te krijgen met alle Urals command-line opties</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="361"/>
+        <location filename="../uralsgui.cpp" line="361"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="375"/>
+        <location filename="../uralsgui.cpp" line="375"/>
         <source>&amp;Settings</source>
         <translation>&amp;Instellingen</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="388"/>
+        <location filename="../uralsgui.cpp" line="388"/>
         <source>&amp;Tools</source>
         <translation>&amp;Gereedschap</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="395"/>
+        <location filename="../uralsgui.cpp" line="395"/>
         <source>&amp;Help</source>
         <translation>&amp;Hulp</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="406"/>
+        <location filename="../uralsgui.cpp" line="406"/>
         <source>Tabs toolbar</source>
         <translation>Tab-werkbalk</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="493"/>
-        <location filename="../bitcoingui.cpp" line="498"/>
+        <location filename="../uralsgui.cpp" line="493"/>
+        <location filename="../uralsgui.cpp" line="498"/>
         <source>Urals client</source>
         <translation>Urals cliënt </translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="643"/>
+        <location filename="../uralsgui.cpp" line="643"/>
         <source>%n active connection(s) to Urals network</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="655"/>
+        <location filename="../uralsgui.cpp" line="655"/>
         <source>Synchronizing with network...</source>
         <translation>Synchroniseren met netwerk...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="658"/>
+        <location filename="../uralsgui.cpp" line="658"/>
         <source>Importing blocks from disk...</source>
         <translation>Blokken aan het importeren vanaf harde schijf...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="661"/>
+        <location filename="../uralsgui.cpp" line="661"/>
         <source>Reindexing blocks on disk...</source>
         <translation>Bezig met herindexeren van blokken op harde schijf...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="665"/>
+        <location filename="../uralsgui.cpp" line="665"/>
         <source>No block source available...</source>
         <translation>Geen bron van blokken beschikbaar...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="675"/>
+        <location filename="../uralsgui.cpp" line="675"/>
         <source>Processed %1 blocks of transaction history.</source>
         <translation>%1 blokken van transactiehistorie verwerkt.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="680"/>
+        <location filename="../uralsgui.cpp" line="680"/>
         <source>Up to date</source>
         <translation>Bijgewerkt</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="701"/>
+        <location filename="../uralsgui.cpp" line="701"/>
         <source>%n hour(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="705"/>
+        <location filename="../uralsgui.cpp" line="705"/>
         <source>%n day(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="709"/>
-        <location filename="../bitcoingui.cpp" line="715"/>
+        <location filename="../uralsgui.cpp" line="709"/>
+        <location filename="../uralsgui.cpp" line="715"/>
         <source>%n week(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="715"/>
+        <location filename="../uralsgui.cpp" line="715"/>
         <source>%1 and %2</source>
         <translation>%1 en %2</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="715"/>
+        <location filename="../uralsgui.cpp" line="715"/>
         <source>%n year(s)</source>
         <translation><numerusform>%n jaren</numerusform><numerusform>
 </numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="719"/>
+        <location filename="../uralsgui.cpp" line="719"/>
         <source>%1 behind</source>
         <translation>%1 achter</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="724"/>
+        <location filename="../uralsgui.cpp" line="724"/>
         <source>Catching up...</source>
         <translation>Aan het bijwerken...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="740"/>
+        <location filename="../uralsgui.cpp" line="740"/>
         <source>Last received block was generated %1 ago.</source>
         <translation>Laatst ontvangen blok was %1 geleden gegenereerd.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="742"/>
+        <location filename="../uralsgui.cpp" line="742"/>
         <source>Transactions after this will not yet be visible.</source>
         <translation>Transacties na dit moment zullen nu nog niet zichtbaar zijn.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="755"/>
+        <location filename="../uralsgui.cpp" line="755"/>
         <source>Urals</source>
         <translation>Urals</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="769"/>
+        <location filename="../uralsgui.cpp" line="769"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="772"/>
+        <location filename="../uralsgui.cpp" line="772"/>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="775"/>
+        <location filename="../uralsgui.cpp" line="775"/>
         <source>Information</source>
         <translation>Informatie</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="854"/>
+        <location filename="../uralsgui.cpp" line="854"/>
         <source>Sent transaction</source>
         <translation>Verzonden transactie</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="854"/>
+        <location filename="../uralsgui.cpp" line="854"/>
         <source>Incoming transaction</source>
         <translation>Binnenkomende transactie</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="855"/>
+        <location filename="../uralsgui.cpp" line="855"/>
         <source>Date: %1
 Amount: %2
 Type: %3
@@ -765,17 +765,17 @@ Adres: %4
 </translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="926"/>
+        <location filename="../uralsgui.cpp" line="926"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;geopend&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="936"/>
+        <location filename="../uralsgui.cpp" line="936"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization only</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="946"/>
+        <location filename="../uralsgui.cpp" line="946"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;gesloten&lt;/b&gt;</translation>
     </message>
@@ -1136,12 +1136,12 @@ Adres: %4
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="78"/>
-        <source>Use 2 separate Xnodes to mix funds up to 1000 URALS</source>
+        <source>Use 2 separate Xnodes to mix funds up to 1000 BSD</source>
         <translation>Gebruik 2 verschillende Xnodes om tot en met  1000DRK te mixen</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="91"/>
-        <source>Use 8 separate Xnodes to mix funds up to 1000 URALS</source>
+        <source>Use 8 separate Xnodes to mix funds up to 1000 BSD</source>
         <translation>Gebruik 8 verschillende Xnodes om tot en met  1000DRK te mixen</translation>
     </message>
     <message>
@@ -1151,18 +1151,18 @@ Adres: %4
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="117"/>
-        <source>This option is the quickest and will cost about ~0.025 URALS to anonymize 1000 URALS</source>
+        <source>This option is the quickest and will cost about ~0.025 BSD to anonymize 1000 BSD</source>
         <translation>Deze optie is het snelst en kost ongeveer ~0.025DRK om 1000DRK te anonimiseren</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="130"/>
-        <source>This option is moderately fast and will cost about 0.05 URALS to anonymize 1000 URALS</source>
-        <translation>Deze optie is relatief snel en zal ongeveer 0.05 URALS kosten om 1000 URALS te anonimiseren </translation>
+        <source>This option is moderately fast and will cost about 0.05 BSD to anonymize 1000 BSD</source>
+        <translation>Deze optie is relatief snel en zal ongeveer 0.05 BSD kosten om 1000 BSD te anonimiseren </translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="156"/>
-        <source>0.1 URALS per 1000 URALS you anonymize.</source>
-        <translation>0.1 URALS per 1000 URALS die je anonimiseert.</translation>
+        <source>0.1 BSD per 1000 BSD you anonymize.</source>
+        <translation>0.1 BSD per 1000 BSD die je anonimiseert.</translation>
     </message>
     <message>
         <location filename="../forms/Darksendconfig.ui" line="143"/>
@@ -1809,8 +1809,8 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="349"/>
-        <source>0 URALS</source>
-        <translation>0 URALS</translation>
+        <source>0 BSD</source>
+        <translation>0 BSD</translation>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="356"/>
@@ -1819,8 +1819,8 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="363"/>
-        <source>0 URALS / 0 Rounds</source>
-        <translation>0 URALS / 0 Rondes</translation>
+        <source>0 BSD / 0 Rounds</source>
+        <translation>0 BSD / 0 Rondes</translation>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="370"/>
@@ -3226,8 +3226,8 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message>
         <location filename="../splashscreen.cpp" line="35"/>
-        <source>The Bitcoin Core developers</source>
-        <translation>De Bitcoin Core ontwikkelaars</translation>
+        <source>The Urals Core developers</source>
+        <translation>De Urals Core ontwikkelaars</translation>
     </message>
     <message>
         <location filename="../splashscreen.cpp" line="36"/>
@@ -3870,7 +3870,7 @@ https://www.transifex.com/projects/p/urals/</source>
     </message>
     <message numerus="yes">
         <location filename="../walletmodel.cpp" line="271"/>
-        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %n URALS.</source>
+        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %n BSD.</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
 </context>
@@ -4131,7 +4131,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Urals Alert&quot; admin@foo.co
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="138"/>
-        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 URALS.</source>
+        <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 BSD.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4853,7 +4853,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="306"/>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
+        <source>RPC SSL options: (see the Urals Wiki for SSL setup instructions)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4903,7 +4903,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../uralsstrings.cpp" line="316"/>
-        <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
+        <source>SSL options: (see the Urals Wiki for SSL setup instructions)</source>
         <translation type="unfinished"/>
     </message>
     <message>

@@ -1,19 +1,22 @@
 
 // Copyright (c) 2014-2015 The Urals developers
+// Copyright (c) 2017-2018 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef MASTERNODE_H
 #define MASTERNODE_H
-
-#include "bignum.h"
+#include "utilstrencodings.h"//todo
+#include "arith_uint256.h"//todo
+#include "netmessagemaker.h"//todo
 #include "sync.h"
 #include "net.h"
 #include "key.h"
-#include "core.h"
+//#include "core.h"
 #include "util.h"
-#include "script.h"
+#include "script/script.h"
 #include "base58.h"
-#include "main.h"
+#include "validation.h"
+#include "net_processing.h"
 #include "masternode-pos.h"
 
 #define MASTERNODE_NOT_PROCESSED               0 // initial state
@@ -28,8 +31,8 @@
 
 #define MASTERNODE_MIN_CONFIRMATIONS           15
 #define MASTERNODE_MIN_DSEEP_SECONDS           (30*60)
-#define MASTERNODE_MIN_DSEE_SECONDS            (10*60)  // uralsdev 12-05 Old 5*60
-#define MASTERNODE_PING_SECONDS                (5*60)   // uralsdev 12-05 OLD 1*60
+#define MASTERNODE_MIN_DSEE_SECONDS            (10*60)  
+#define MASTERNODE_PING_SECONDS                (5*60)   
 #define MASTERNODE_EXPIRATION_SECONDS          (65*60)
 #define MASTERNODE_REMOVAL_SECONDS             (70*60)
 
@@ -38,13 +41,19 @@ using namespace std;
 class CMasternode;
 class CMasternodePayments;
 class CMasternodePaymentWinner;
+class CMasternodePaymentsMessage;
+
+class CMasternodeScanning;
 
 extern CMasternodePayments masternodePayments;
+extern CMasternodePaymentsMessage mnPaymentMessage;
 extern map<uint256, CMasternodePaymentWinner> mapSeenMasternodeVotes;
 extern map<int64_t, uint256> mapCacheBlockHashes;
 
-void ProcessMessageMasternodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
+//void ProcessMessageMasternodePayments(CNode* pfrom, const string& strCommand, CDataStream& vRecv, CConnman& connman);
 bool GetBlockHash(uint256& hash, int nBlockHeight);
+
+void ProcessMessageMasternodePayments(CNode* pfrom, const string& strCommand, CDataStream& vRecv, CConnman& connman);
 
 //
 // The Masternode Class. For managing the Darksend process. It contains the input of the 1000DRK, signature to prove
@@ -137,8 +146,10 @@ public:
 
     uint256 CalculateScore(int mod=1, int64_t nBlockHeight=0);
 
-    IMPLEMENT_SERIALIZE
-    (
+    ADD_SERIALIZE_METHODS;
+    template <typename Stream, typename Operation>
+    inline void SerializationOp(Stream& s, Operation ser_action)
+	{
         // serialized format:
         // * version byte (currently 0)
         // * all fields (?)
@@ -161,14 +172,14 @@ public:
                 READWRITE(allowFreeTx);
                 READWRITE(protocolVersion);
                 READWRITE(nLastDsq);
-                READWRITE(donationAddress);
+                READWRITE(*(CScriptBase*)(&donationAddress));
                 READWRITE(donationPercentage);
                 READWRITE(nVote);
                 READWRITE(lastVote);
                 READWRITE(nScanningErrorCount);
                 READWRITE(nLastScanningErrorBlockHeight);
         }
-    )
+    }
 
 
     void UpdateLastSeen(int64_t override=0)
@@ -230,13 +241,13 @@ public:
             if(nScanningErrorCount < 0) nScanningErrorCount = 0;
         } else { //all other codes are equally as bad
                     nScanningErrorCount++;
-           /* Uralsdev 04/08/2015 
+           //  
                         if(nScanningErrorCount >= 4)
                         {
                         nScanningErrorCount = 0;
-                        LogPrintf("S-Reset Bad Masternodescore \n"); //	Uralsdev Set this for Debug
+                        LogPrintf("S-Reset Bad Masternodescore \n"); //
                         }
-                        */
+                        
             if(nScanningErrorCount > MASTERNODE_SCANNING_ERROR_THESHOLD*2) nScanningErrorCount = MASTERNODE_SCANNING_ERROR_THESHOLD*2;
         }
     }
@@ -280,30 +291,33 @@ public:
 
     uint256 GetHash()
 	{ 
-	uint256 n2, n3; 
+		arith_uint256 n2, n3; 
 	
-	 int nBlockTime = chainActive.Tip()->GetBlockTime();
+		int nBlockTime = chainActive.Tip()->GetBlockTime();
 	    if (nBlockTime >= FORKX17_Main_Net2)
-	{ 
-    	n2 = XEVAN(BEGIN(nBlockHeight), END(nBlockHeight));
-        n3 = vin.prevout.hash > n2 ? (vin.prevout.hash - n2) : (n2 - vin.prevout.hash);
-        return n3;
-	}
-    else 
-    {
-		n2 = HashX11(BEGIN(nBlockHeight), END(nBlockHeight));
-		n3 = vin.prevout.hash > n2 ? (vin.prevout.hash - n2) : (n2 - vin.prevout.hash);
-		return n3;
-    }
+		{ 
+			n2 = UintToArith256(XEVAN(BEGIN(nBlockHeight), END(nBlockHeight)));
+			n3 = UintToArith256(vin.prevout.hash) > n2 ? UintToArith256(vin.prevout.hash) - n2 : n2 - UintToArith256(vin.prevout.hash);
+			return ArithToUint256(n3);
+		}
+		else 
+		{
+			n2 = UintToArith256(HashX11(BEGIN(nBlockHeight), END(nBlockHeight)));
+			n3 = UintToArith256(vin.prevout.hash) > n2 ? UintToArith256(vin.prevout.hash) - n2 : n2 - UintToArith256(vin.prevout.hash);
+			return ArithToUint256(n3);
+		}
     }
 
-    IMPLEMENT_SERIALIZE(
+    ADD_SERIALIZE_METHODS;
+    template <typename Stream, typename Operation>
+    inline void SerializationOp(Stream& s, Operation ser_action)
+	{
         READWRITE(nBlockHeight);
-        READWRITE(payee);
+        READWRITE(*(CScriptBase*)(&payee));//--todo test
         READWRITE(vin);
         READWRITE(score);
         READWRITE(vchSig);
-     )
+    }
 };
 
 //
@@ -327,8 +341,8 @@ public:
     CMasternodePayments() {
         
         // 100: G=0 101: MK just test
-        strMainPubKey = "04521CAE97FEE1CA1F67B4B6D5E4323125D63DBA5291CF2609F71234ED86355A109140B3316366CAD47DCD2D0C04326A3233AC7797231F0AF88C1FE6FE94B7E37C"; // uralsdev 04-2015
-        strTestPubKey = "04CBC82D432A42A05F9474A5554413A6166767C928DE669C40144DC585FB85F15E28035EADE398A6B8E38C24A001EAB50023124C4D8328C99EC2FDE47ED54B17BF";  // uralsdev do not use 04-2015
+        strMainPubKey = "04521CAE97FEE1CA1F67B4B6D5E4323125D63DBA5291CF2609F71234ED86355A109140B3316366CAD47DCD2D0C04326A3233AC7797231F0AF88C1FE6FE94B7E37C"; //  04-2015
+        strTestPubKey = "04CBC82D432A42A05F9474A5554413A6166767C928DE669C40144DC585FB85F15E28035EADE398A6B8E38C24A001EAB50023124C4D8328C99EC2FDE47ED54B17BF";  // do not use 04-2015
         enabled = false;
     }
 
@@ -346,7 +360,7 @@ public:
     bool AddWinningMasternode(CMasternodePaymentWinner& winner);
     bool ProcessBlock(int nBlockHeight);
     void Relay(CMasternodePaymentWinner& winner);
-    void Sync(CNode* node);
+    void Sync(CNode* node, CConnman& connman);
     void CleanPaymentList();
     int LastPayment(CMasternode& mn);
 

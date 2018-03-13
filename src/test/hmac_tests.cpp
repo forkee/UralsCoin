@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Bitcoin Core developers
+// Copyright (c) 2013 The Urals Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -71,7 +71,7 @@ static const testvec_t vtest[] = {
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         "aaaaaa",
-        "54657374205573696e67204c61.0.065"
+        "54657374205573696e67204c61726765"
         "72205468616e20426c6f636b2d53697a"
         "65204b6579202d2048617368204b6579"
         "204669727374",
@@ -91,9 +91,9 @@ static const testvec_t vtest[] = {
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         "aaaaaa",
         "54686973206973206120746573742075"
-        "73696e672061206c61.0.06572207468"
+        "73696e672061206c6172676572207468"
         "616e20626c6f636b2d73697a65206b65"
-        "7920616e642061206c61.0.065722074"
+        "7920616e642061206c61726765722074"
         "68616e20626c6f636b2d73697a652064"
         "6174612e20546865206b6579206e6565"
         "647320746f2062652068617368656420"

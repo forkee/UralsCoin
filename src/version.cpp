@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2014 The Bitcoin developers
+/*// Copyright (c) 2012-2014 The Urals developers
 // Copyright (c) 2014-2015 The Urals developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -10,7 +10,7 @@
 // Name of client reported in the 'version' message. Report the same name
 // for both uralsd and urals-qt, to make it harder for attackers to
 // target servers or GUI users specifically.
-const std::string CLIENT_NAME("URALS Core");
+const std::string CLIENT_NAME("BSD Core");
 
 // Client version number
 #define CLIENT_VERSION_SUFFIX   "-beta"
@@ -39,7 +39,7 @@ const std::string CLIENT_NAME("URALS Core");
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
 #    define GIT_COMMIT_ID ""
-#    define GIT_COMMIT_DATE "Sat, 2 Aug 2017 11:00:00 +5"
+#    define GIT_COMMIT_DATE "Sat, 17 Oct 2015 16:33:17 -0700"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj,min,rev,build,suffix) \
@@ -70,4 +70,4 @@ const std::string CLIENT_NAME("URALS Core");
 #endif
 
 const std::string CLIENT_BUILD(BUILD_DESC CLIENT_VERSION_SUFFIX);
-const std::string CLIENT_DATE(BUILD_DATE);
+const std::string CLIENT_DATE(BUILD_DATE);*/
